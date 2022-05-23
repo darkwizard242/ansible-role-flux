@@ -1,0 +1,36 @@
+---
+galaxy_info:
+  role_name: flux
+  author: darkwizard242
+  description: Installs/Uninstalls 'flux'. Flux is an open and extensible continuous delivery solution for Kubernetes. Powered by GitOps Toolkit.
+  company: none
+  license: MIT
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - jammy
+        - focal
+        - bionic
+    - name: Debian
+      versions:
+        - bullseye
+        - buster
+        - stretch
+    - name: EL
+      versions:
+        - 8
+        - 7
+
+  galaxy_tags:
+    - flux
+    - flux2
+    - fluxcd
+    - kubernetes
+    - gitops
+    - cd
+    - cicd
+    - ci
+    - system
+    - os
