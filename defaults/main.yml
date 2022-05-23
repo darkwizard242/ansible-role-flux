@@ -1,0 +1,12 @@
+---
+# defaults file for flux
+
+flux_app: flux
+flux_version: 0.30.2
+flux_os: linux
+flux_arch: amd64
+flux_dl_url: https://github.com/fluxcd/flux2/releases/download/v{{ flux_version }}/{{ flux_app }}_{{ flux_version }}_{{ flux_os }}_{{ flux_arch }}.tar.gz
+flux_bin_path: /usr/local/bin
+flux_file_owner: root
+flux_file_group: root
+flux_file_permission_mode: '0755'
