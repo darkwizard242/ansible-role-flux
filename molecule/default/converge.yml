@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: darkwizard242.flux
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
