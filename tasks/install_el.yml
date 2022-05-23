@@ -1,0 +1,13 @@
+---
+# tasks file for flux | EL Family
+
+- name: EL Family | Downloading and extracting {{ flux_app }} {{ flux_version }}
+  ansible.builtin.unarchive:
+    src: "{{ flux_dl_url }}"
+    dest: "{{ flux_bin_path }}"
+    extra_opts:
+      - flux
+    remote_src: yes
+    owner: "{{ flux_file_owner }}"
+    group: "{{ flux_file_group }}"
+    mode: "{{ flux_file_permission_mode }}"
