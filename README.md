@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 flux_app: flux
-flux_version: 2.2.0
+flux_version: 2.2.1
 flux_os: linux
 flux_arch: amd64
 flux_dl_url: https://github.com/fluxcd/flux2/releases/download/v{{ flux_version }}/{{ flux_app }}_{{ flux_version }}_{{ flux_os }}_{{ flux_arch }}.tar.gz
@@ -31,7 +31,7 @@ flux_file_permission_mode: '0755'
 Variable                  | Description
 ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------
 flux_app                  | Defines the app to install i.e. **flux**
-flux_version              | Defined to dynamically fetch the desired version to install. Defaults to: **2.2.0**
+flux_version              | Defined to dynamically fetch the desired version to install. Defaults to: **2.2.1**
 flux_os                   | Defines os type. Defaults to: **linux**
 flux_arch                 | Defines os architecture. Defaults to: **amd64**
 flux_dl_url               | Defines URL to download the flux binary from.
