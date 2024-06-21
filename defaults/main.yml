@@ -3,9 +3,17 @@
 
 flux_app: flux
 flux_version: 2.3.0
-flux_os: linux
-flux_arch: amd64
-flux_dl_url: https://github.com/fluxcd/flux2/releases/download/v{{ flux_version }}/{{ flux_app }}_{{ flux_version }}_{{ flux_os }}_{{ flux_arch }}.tar.gz
+flux_os: "{{ ansible_system | lower }}"
+flux_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  armv6l: armv6
+  armv7l: armv7
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: amd64
+flux_dl_url: https://github.com/fluxcd/flux2/releases/download/v{{ flux_version }}/{{ flux_app }}_{{ flux_version }}_{{ flux_os }}_{{ flux_architecture_map[ansible_architecture] }}.tar.gz
 flux_bin_path: /usr/local/bin
 flux_file_owner: root
 flux_file_group: root

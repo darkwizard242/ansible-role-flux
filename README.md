@@ -17,9 +17,17 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 flux_app: flux
 flux_version: 2.3.0
-flux_os: linux
-flux_arch: amd64
-flux_dl_url: https://github.com/fluxcd/flux2/releases/download/v{{ flux_version }}/{{ flux_app }}_{{ flux_version }}_{{ flux_os }}_{{ flux_arch }}.tar.gz
+flux_os: "{{ ansible_system | lower }}"
+flux_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  armv6l: armv6
+  armv7l: armv7
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: amd64
+flux_dl_url: https://github.com/fluxcd/flux2/releases/download/v{{ flux_version }}/{{ flux_app }}_{{ flux_version }}_{{ flux_os }}_{{ flux_architecture_map[ansible_architecture] }}.tar.gz
 flux_bin_path: /usr/local/bin
 flux_file_owner: root
 flux_file_group: root
@@ -32,8 +40,8 @@ Variable                  | Description
 ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------
 flux_app                  | Defines the app to install i.e. **flux**
 flux_version              | Defined to dynamically fetch the desired version to install. Defaults to: **2.3.0**
-flux_os                   | Defines os type. Defaults to: **linux**
-flux_arch                 | Defines os architecture. Defaults to: **amd64**
+flux_os                   | Defines os type.
+flux_architecture_map     | Defines os architecture.
 flux_dl_url               | Defines URL to download the flux binary from.
 flux_bin_path             | Defined to dynamically set the appropriate path to store flux binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin**
 flux_file_owner           | Owner for the binary file of flux.
