@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 flux_app: flux
-flux_version: 2.5.0
+flux_version: 2.5.1
 flux_os: "{{ ansible_system | lower }}"
 flux_architecture_map:
   amd64: amd64
@@ -39,7 +39,7 @@ flux_file_permission_mode: '0755'
 Variable                  | Description
 ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------
 flux_app                  | Defines the app to install i.e. **flux**
-flux_version              | Defined to dynamically fetch the desired version to install. Defaults to: **2.5.0**
+flux_version              | Defined to dynamically fetch the desired version to install. Defaults to: **2.5.1**
 flux_os                   | Defines os type.
 flux_architecture_map     | Defines os architecture.
 flux_dl_url               | Defines URL to download the flux binary from.
