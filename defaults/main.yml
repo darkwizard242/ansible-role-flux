@@ -2,7 +2,7 @@
 # defaults file for flux
 
 flux_app: flux
-flux_version: 2.6.3
+flux_version: 2.6.4
 flux_os: "{{ ansible_system | lower }}"
 flux_architecture_map:
   amd64: amd64
